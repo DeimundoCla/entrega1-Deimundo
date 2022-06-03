@@ -25,4 +25,6 @@ urlpatterns = [
     path('conversor/', views.conversor, name="conversor"),
     path('contacto/', views.contacto, name="contacto"),
     path('cotizaciones/', views.cotizaciones, name="cotizaciones"),
+    path('cotizaciones/alta_usd', views.alta_usd, name="alta_usd"),
+    path('landing_cotizacion/', views.landing_cotizacion, name="landing_cotizacion"),
     ]

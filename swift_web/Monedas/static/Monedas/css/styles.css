@@ -11653,6 +11653,19 @@ body {
   }
 }
 
+.landing {
+  /* The image used */
+  background-image: url("../assets/img/bg-landing.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .contacto {
   position: relative;
   width: 100%;
