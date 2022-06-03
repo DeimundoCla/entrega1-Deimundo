@@ -24,4 +24,4 @@ Pruebas pre-entrega proyecto final
 2) Creación de la landing para responder si los datos se cargaron con éxito.
 
 # version 0.4 (rama)
-1) Se agrega link a la página para carga de cotizaciones.
+1) Se agrega hipervínculo en index para carga de cotizaciones.
