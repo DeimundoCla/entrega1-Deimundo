@@ -1,6 +1,6 @@
 # Maquetación:
 
-1) INDEX con botones para ingresar a las funciones principales de la página web: Conversor de divisas - Buscador de código Swift - Carga de cotizaciones por día y hora.
+1) Home con botones para ingresar a las funciones principales de la página web: Conversor de divisas - Buscador de código Swift - Carga de cotizaciones por día y hora.
 2) Formulario de carga de 4 cotizaciones, para simplificar la UX y crear una base de datos para generar consultas históricas de cotizaciones.
 3) Conversor de divisas tratando de integrar con API financiera para poder tener cotizaciones actualizadas de forma automática.
 4) Buscador de código SWIFT con la creación de un archivo JSON al que realizarle los query por país - ciudad - banco matríz
