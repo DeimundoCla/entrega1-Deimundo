@@ -8,7 +8,7 @@ Pruebas pre-entrega proyecto final
 
 3)Carga de modelos y funciones (incompletas) para la creación del conversor de monedas.
 
-# version 0.2 (RAMA)
+# version 0.2 (RAMA quedó atrás, eliminada)
 1)Se modifica plantilla HTML para reducir carga y limitarse sólo a los elementos requeridos.
 
 2)Refinamiento de plantilla a estilo similar al final.
