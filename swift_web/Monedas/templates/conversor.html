@@ -2,28 +2,33 @@
 {% load static %}
 
 {% block contenido %}
-
-
-<main class="contacto">
-    <div class="container px-4 px-lg-9 d-outline-flex h-100 align-items-center justify-content-center bg-light">
-        <form>
-            <div class="mb-4">
-                <label for="exampleInputEmail1" class="form-label">Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">Garantizamos la protección de sus datos personales.</div>
+<body class="conversor">
+    <div class="container px-4 px-lg-9 d-flex h-100 align-items-center justify-content-center">
+        <div class=col>
+            <div class="d-flex justify-content-center">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Divisa a enviar</option>
+                    <option value="1">USD oficial</option>
+                    <option value="2">USD blue</option>
+                    <option value="3">Euro</option>
+                    <option value="4">Real</option>
+                </select>
             </div>
-            <div class="mb-4">
-                <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class=col>
+            <div class="d-flex justify-content-center">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Divisa a recibir</option>
+                    <option value="1">Peso Argentino</option>
+                    <option value="2">Peso Chileno</option>
+                    <option value="3">Peso Uruguayo</option>
+                    <option value="3">Guarani</option>
+                </select>
             </div>
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">No soy un robot no soy</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
-        </form>
+        </div>
     </div>
-</main>
+</body>
+<div class="text-center fw-bold bg-light justify-content-center"> Cotizaciones actualizadas al {% now "SHORT_DATETIME_FORMAT" %} </div>
 
 
 {% endblock %}

@@ -20,3 +20,8 @@ def contacto(request):
     template = loader.get_template("contacto.html")
     documento = template.render()
     return HttpResponse(documento)
+
+def cotizaciones(request):
+    template = loader.get_template("cotizaciones.html")
+    documento = template.render()
+    return HttpResponse(documento)

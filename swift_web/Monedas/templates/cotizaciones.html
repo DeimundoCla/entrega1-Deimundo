@@ -1,0 +1,84 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<main class="contacto">
+    <div class="container px-4 px-lg-9 d-inline-flex h-100 align-items-center justify-content-center bg-light">
+        <form>
+            <div class="mb-4">
+                <label for="cotizaciones" class="form-label">Dolar oficial</label>
+                <input type="number" class="form-control" id="cotizacion-usd" aria-describedby="ayuda-cotizaciones">
+                <div id="ayuda" class="form-text">Ingresar cotización a la fecha.</div>
+            </div>
+            <div class="mb-4">
+                <label for="fecha_cotizacion" class="form-label">Fecha cotización</label>
+                <input type="datetime-local" class="form-control" id="fecha-cotizacion" aria-describedby="ayuda-fecha-cotizaciones">
+                <div id="ayuda" class="form-text">Ingresar la fecha de cotización.</div>
+            </div>
+            <div class="mb-4">
+                <label for="variacion" class="form-label">Variación</label>
+                <input type="number" class="form-control" id="variacion-cotizacion" aria-describedby="variacion-cotizaciones">
+                <div id="ayuda" class="form-text">Ingresar cotización a la fecha.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+        <form>
+            <div class="mb-4">
+                <label for="cotizaciones" class="form-label">Dolar Blue</label>
+                <input type="number" class="form-control" id="cotizacion-usd-blue" aria-describedby="ayuda-cotizaciones">
+                <div id="ayuda" class="form-text">Ingresar cotización a la fecha.</div>
+            </div>
+            <div class="mb-4">
+                <label for="fecha_cotizacion" class="form-label">Fecha cotización</label>
+                <input type="datetime-local" class="form-control" id="fecha-cotizacion" aria-describedby="ayuda-fecha-cotizaciones">
+                <div id="ayuda" class="form-text">Ingresar la fecha de cotización.</div>
+            </div>
+            <div class="mb-4">
+                <label for="variacion" class="form-label">Variación</label>
+                <input type="number" class="form-control" id="variacion-cotizacion" aria-describedby="variacion-cotizaciones">
+                <div id="ayuda" class="form-text">Ingresar cotización a la fecha.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+        <form>
+            <div class="mb-4">
+                <label for="cotizaciones" class="form-label">euro</label>
+                <input type="number" class="form-control" id="cotizacion-euro" aria-describedby="ayuda-cotizaciones">
+                <div id="ayuda" class="form-text">Ingresar cotización a la fecha.</div>
+            </div>
+            <div class="mb-4">
+                <label for="fecha_cotizacion" class="form-label">Fecha cotización</label>
+                <input type="datetime-local" class="form-control" id="fecha-cotizacion" aria-describedby="ayuda-fecha-cotizaciones">
+                <div id="ayuda" class="form-text">Ingresar la fecha de cotización.</div>
+            </div>
+            <div class="mb-4">
+                <label for="variacion" class="form-label">Variación</label>
+                <input type="number" class="form-control" id="variacion-cotizacion" aria-describedby="variacion-cotizaciones">
+                <div id="ayuda" class="form-text">Ingresar cotización a la fecha.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+        <form>
+            <div class="mb-4">
+                <label for="cotizaciones" class="form-label">Real</label>
+                <input type="number" class="form-control" id="cotizacion-real" aria-describedby="ayuda-cotizaciones">
+                <div id="ayuda" class="form-text">Ingresar cotización a la fecha.</div>
+            </div>
+            <div class="mb-4">
+                <label for="fecha_cotizacion" class="form-label">Fecha cotización</label>
+                <input type="datetime-local" class="form-control" id="fecha-cotizacion" aria-describedby="ayuda-fecha-cotizaciones">
+                <div id="ayuda" class="form-text">Ingresar la fecha de cotización.</div>
+            </div>
+            <div class="mb-4">
+                <label for="variacion" class="form-label">Variación</label>
+                <input type="number" class="form-control" id="variacion-cotizacion" aria-describedby="variacion-cotizaciones">
+                <div id="ayuda" class="form-text">Ingresar cotización a la fecha.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+</main>
+
+
+{% endblock %}

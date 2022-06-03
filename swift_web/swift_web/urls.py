@@ -24,4 +24,5 @@ urlpatterns = [
     path('', views.index,),
     path('conversor/', views.conversor, name="conversor"),
     path('contacto/', views.contacto, name="contacto"),
+    path('cotizaciones/', views.cotizaciones, name="cotizaciones"),
     ]
