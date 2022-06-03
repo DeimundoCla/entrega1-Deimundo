@@ -20,5 +20,8 @@ Pruebas pre-entrega proyecto final
 4) Refinamiento de la mayoría de botones, textos e interactuables.
 
 # version 0.4 (master)
-1) Se realizó la vinculación de los formularios con views (falta resolver problemas con el token CSFR)
+1) Se realizó la vinculación de los formularios de carga de cotizaciones con views (falta resolver problemas con el token CSFR)
 2) Creación de la landing para responder si los datos se cargaron con éxito.
+
+# version 0.4 (rama)
+1) Se agrega link a la página para carga de cotizaciones.
