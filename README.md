@@ -13,3 +13,8 @@ Pruebas pre-entrega proyecto final
 
 2)Refinamiento de plantilla a estilo similar al final.
 
+# version 0.3 (master)
+1) Se agregaron multiples plantillas con base padre y modificaciones en styles.css
+2) Primer intento de conversor de monedas más formulario de contacto.
+3) Creación de admin y vinculación de modelos.
+4) Refinamiento de la mayoría de botones, textos e interactuables.
