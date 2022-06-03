@@ -1,5 +1,10 @@
-# repoweb
-Pruebas pre-entrega proyecto final
+# Maquetación:
+
+1) INDEX con botones para ingresar a las funciones principales de la página web: Conversor de divisas - Buscador de código Swift - Carga de cotizaciones por día y hora.
+2) Formulario de carga de 4 cotizaciones, para simplificar la UX y crear una base de datos para generar consultas históricas de cotizaciones.
+3) Conversor de divisas tratando de integrar con API financiera para poder tener cotizaciones actualizadas de forma automática.
+4) Buscador de código SWIFT con la creación de un archivo JSON al que realizarle los query por país - ciudad - banco matríz
+5) Contacto para registro con la posibilidad de generar usuarios "premium" con acceso a cotizaciones bursátiles y criptomonedas.
 
 # version 0.1
 1)Se crea la plantilla en base a ejemplo de Bootstrap.
