@@ -3,86 +3,29 @@
 
 {% block contenido %}
 
-<main class="contacto">
-    <div class="container px-4 px-lg-9 d-inline-flex h-100 align-items-center justify-content-center bg-light">
-        <form action='alta_usd' method='POST'>
-            {% csrf_token %}
-            <div class="mb-4">
-                <label for="cotizaciones_usd" class="form-label">Dolar oficial</label>
-                <input type="number" class="form-control" id="cotizacion-usd" aria-describedby="ayuda-cotizaciones" required>
-                <div id="ayuda" class="form-text">Ingresar cotización a la fecha.</div>
+<section class="projects-section d-flex bg-light" id="projects">
+    <div class="container px-4 px-lg-5">
+        <div class="row row-cols-2">
+            <div class="col"><a href="/cotizacion_usd" class="buttonA" class="btn btn-primary btn-lg">Cargar cotizacion USD</a></div>
+            <div class="col"><a href="/cotizacion_usd_blue" class="buttonB" class="btn btn-secondary btn-lg">Cargar cotizacion USD Blue</a></div>
+            <div class="col"><a href="/cotizacion_euro" class="buttonB" class="btn btn-secondary btn-lg">Cargar cotizacion Euro</a></div>
+            <div class="col"><a href="/cotizacion_real" class="buttonA" class="btn btn-primary btn-lg">Cargar cotizacion Real</a></div>
+            <div>
+        </div>
+    </div>
+    <hr>
+    <p>
+    <p>         
+    <div class="d-flex justify-content-center pt-xxl-3">
+        <h6>Buscar cotizaciones por nombre de moneda(USD, USD_BLUE, Real, Euro)</h6>
+    </div>
+    <div class="wrap justify-content-center">
+        <form action="/landing_busqueda" method="GET">
+            <div class="search">
+                <input type="text" name="searched" class="searchTerm" placeholder="Seleccione la moneda y la fecha, Ej.: USD 15-05-2022"><button type="submit" class="searchButton"><i class="fa fa-search"></i> </button>
             </div>
-            <div class="mb-4">
-                <label for="fecha_cotizacion" class="form-label">Fecha cotización</label>
-                <input type="datetime-local" class="form-control" id="fecha-cotizacion" aria-describedby="ayuda-fecha-cotizaciones" required>
-                <div id="ayuda" class="form-text">Ingresar la fecha de cotización.</div>
-            </div>
-            <div class="mb-4">
-                <label for="variacion" class="form-label">Variación</label>
-                <input type="number" class="form-control" id="variacion-cotizacion" aria-describedby="variacion-cotizaciones" required>
-                <div id="ayuda" class="form-text">Ingresar la variación diaria.</div>
-            </div>
-            <button type="submit" class="btn btn-primary">Guardar</button>
-        </form>
-        <form action='alta_usd_blue' method='POST'>
-            {% csrf_token %}
-            <div class="mb-4">
-                <label for="cotizaciones_blue" class="form-label">Dolar Blue</label>
-                <input type="number" class="form-control" id="cotizacion-usd-blue" aria-describedby="ayuda-cotizaciones" required>
-                <div id="ayuda" class="form-text">Ingresar cotización a la fecha.</div>
-            </div>
-            <div class="mb-4">
-                <label for="fecha_cotizacion" class="form-label">Fecha cotización</label>
-                <input type="datetime-local" class="form-control" id="fecha-cotizacion-blue" aria-describedby="ayuda-fecha-cotizaciones" required>
-                <div id="ayuda" class="form-text">Ingresar la fecha de cotización.</div>
-            </div>
-            <div class="mb-4">
-                <label for="variacion" class="form-label">Variación</label>
-                <input type="number" class="form-control" id="variacion-cotizacion-blue" aria-describedby="variacion-cotizaciones" required>
-                <div id="ayuda" class="form-text">Ingresar la variación diaria.</div>
-            </div>
-            <button type="submit" class="btn btn-primary">Guardar</button>
-        </form>
-        <form action='views.alta_euro' method='POST'>
-            {% csrf_token %}
-            <div class="mb-4">
-                <label for="cotizaciones_euro" class="form-label">euro</label>
-                <input type="number" class="form-control" id="cotizacion-euro" aria-describedby="ayuda-cotizaciones" required>
-                <div id="ayuda" class="form-text">Ingresar cotización a la fecha.</div>
-            </div>
-            <div class="mb-4">
-                <label for="fecha_cotizacion" class="form-label">Fecha cotización</label>
-                <input type="datetime-local" class="form-control" id="fecha-cotizacion_euro" aria-describedby="ayuda-fecha-cotizaciones" required>
-                <div id="ayuda" class="form-text">Ingresar la fecha de cotización.</div>
-            </div>
-            <div class="mb-4">
-                <label for="variacion" class="form-label">Variación</label>
-                <input type="number" class="form-control" id="variacion-cotizacion_euro" aria-describedby="variacion-cotizaciones" required>
-                <div id="ayuda" class="form-text">Ingresar la variación diaria.</div>
-            </div>
-            <button type="submit" class="btn btn-primary">Guardar</button>
-        </form>
-        <form action='alta_real' method='POST'>
-            {% csrf_token %}
-            <div class="mb-4">
-                <label for="cotizaciones_real" class="form-label">Real</label>
-                <input type="number" class="form-control" id="cotizacion-real" aria-describedby="ayuda-cotizaciones" required>
-                <div id="ayuda" class="form-text">Ingresar cotización a la fecha.</div>
-            </div>
-            <div class="mb-4">
-                <label for="fecha_cotizacion" class="form-label">Fecha cotización</label>
-                <input type="datetime-local" class="form-control" id="fecha-cotizacion_real" aria-describedby="ayuda-fecha-cotizaciones" required>
-                <div id="ayuda" class="form-text">Ingresar la fecha de cotización.</div>
-            </div>
-            <div class="mb-4">
-                <label for="variacion" class="form-label">Variación</label>
-                <input type="number" class="form-control" id="variacion-cotizacion_real" aria-describedby="variacion-cotizaciones" required>
-                <div id="ayuda" class="form-text">Ingresar la variación diaria.</div>
-            </div>
-            <button type="submit" class="btn btn-primary">Guardar</button>
         </form>
     </div>
-</main>
-
+</section>
 
 {% endblock %}

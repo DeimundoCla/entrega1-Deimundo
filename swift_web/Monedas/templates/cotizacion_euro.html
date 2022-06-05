@@ -1,0 +1,15 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<main class="contacto">
+    <div class="container px-4 px-lg-3 d-md-flex width=60% h-100 align-items-center justify-content-center bg-light bg-gradient">
+        <form action='' method='POST'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-secondary">Enviar</button>
+        </form>
+    </div>
+
+{% endblock %}
