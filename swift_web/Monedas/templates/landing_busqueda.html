@@ -1,0 +1,30 @@
+{% extends 'padre.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<br>
+<section class="projects-section d-flex bg-light" id="projects">
+    <div class="container px-4 px-lg-5">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Moneda</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Cotización</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for data in usd %}
+            <tr>
+                <td>{{ data.nombre }}</td>
+                <td>{{ data.fecha }}</td>
+                <td>{{ data.cotizacion }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+{% endblock %}
