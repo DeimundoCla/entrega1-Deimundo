@@ -30,3 +30,9 @@
 
 # version 0.4 (rama)
 1) Se agrega hipervínculo en index para carga de cotizaciones.
+
+# version 0.5 (master)
+1) Se agregan formularios de carga de cotizaciones con éxito.
+2) Base de datos: se actualizan tablas para contener nombres de las monedas.
+3) Se crea formulario de búsqueda en págna de cotizaciones, no entrega resultados, revisar {% for loop %}
+4) Refinamiento de botones, secciones, paddings en CSS.
