@@ -2,9 +2,10 @@
 
 1) Home con botones para ingresar a las funciones principales de la página web: Conversor de divisas - Buscador de código Swift - Carga de cotizaciones por día y hora.
 2) Formulario de carga de 4 cotizaciones, para simplificar la UX y crear una base de datos para generar consultas históricas de cotizaciones.
-3) Conversor de divisas tratando de integrar con API financiera para poder tener cotizaciones actualizadas de forma automática.
-4) Buscador de código SWIFT con la creación de un archivo JSON al que realizarle los query por país - ciudad - banco matríz
-5) Contacto para registro con la posibilidad de generar usuarios "premium" con acceso a cotizaciones bursátiles y criptomonedas.
+3) Formulario de búsqueda para las cotizaciones cargadas en base de datos por fecha y tipo de moneda.
+4) Conversor de divisas tratando de integrar con API financiera para poder tener cotizaciones actualizadas de forma automática.
+5) Buscador de código SWIFT con la creación de un archivo JSON al que realizarle los query por país - ciudad - banco matríz
+6) Contacto para registro con la posibilidad de generar usuarios "premium" con acceso a cotizaciones bursátiles y criptomonedas.
 
 # version 0.1
 1)Se crea la plantilla en base a ejemplo de Bootstrap.
@@ -36,3 +37,8 @@
 2) Base de datos: se actualizan tablas para contener nombres de las monedas.
 3) Se crea formulario de búsqueda en págna de cotizaciones, no entrega resultados, revisar {% for loop %}
 4) Refinamiento de botones, secciones, paddings en CSS.
+
+# version 0.6 (rama)
+1) Se intentó crear búsqueda compleja mediante varios modelos y varias query.
+2) Pese a entender el proceso del query, se encontraron problemas para vincular lo que se hace con la búsqueda en la URL.
+3) Se deja esta rama para continuar este formato de búsqueda en el futuro.
