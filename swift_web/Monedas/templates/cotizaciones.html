@@ -20,10 +20,9 @@
         <h6>Buscar cotizaciones por nombre de moneda(USD, USD_BLUE, Real, Euro)</h6>
     </div>
     <div class="wrap justify-content-center">
-        <form action="/landing_busqueda" method="GET">
-            <div class="search">
-                <input type="text" name="searched" class="searchTerm" placeholder="Seleccione la moneda y la fecha, Ej.: USD 15-05-2022"><button type="submit" class="searchButton"><i class="fa fa-search"></i> </button>
-            </div>
+        <form action='SearchView.as_view()'>
+            <input type='date'/>
+            <input type='submit'/>
         </form>
     </div>
 </section>

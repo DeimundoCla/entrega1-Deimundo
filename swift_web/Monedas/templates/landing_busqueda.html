@@ -1,30 +1,70 @@
 {% extends 'padre.html' %}
 {% load static %}
-
+{% load class_name %}
 {% block contenido %}
 
 <br>
 <section class="projects-section d-flex bg-light" id="projects">
-    <div class="container px-4 px-lg-5">
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">Moneda</th>
-                <th scope="col">Fecha</th>
-                <th scope="col">Cotización</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for data in usd %}
-            <tr>
-                <td>{{ data.nombre }}</td>
-                <td>{{ data.fecha }}</td>
-                <td>{{ data.cotizacion }}</td>
-            </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+   <div class='row title-row my-5'>
+        <div class='col-12 py-0'>
+            <h3 class='my-0 py-0'>{{ count }} results for <b>{{ query }}</b></h3>
+        </div>
     </div>
-</section>
-
-{% endblock %}
+            
+            
+    {% for object in object_list %}
+        {% with object|class_name as clase %}
+          {% if  == 'Dolar' %}
+               <div class='row'>
+                 <div class='col-12'>
+                    Cotización: {{ object.fecha}}'>{{ object.cotizacion }}
+                </div>
+              </div>
+    
+          {% elif clase == 'Dolar_blue' %}
+               <div class='row'>
+                 <div class='col-12'>
+                    Cotización: {{ object.fecha}}'>{{ object.cotizacion }}
+                  </div>
+                </div>
+            
+          {% elif clase == 'Euro' %}
+               <div class='row'>
+                    <div class='col-12'>
+                       Cotización: {{ object.fecha}}'>{{ object.cotizacion }}
+                    </div>
+                </div>
+          {% elif clase == 'Real' %}
+               <div class='row'>
+                    <div class='col-12'>
+                       Cotización: {{ object.fecha}}'>{{ object.cotizacion }}
+                    </div>
+                </div>
+          {% else %}
+               <div class='row'>
+                 <div class='col-12 col-lg-8 offset-lg-4'>
+                    No se encontraron resultados.
+                </div>
+               </div>
+            {% endif %}
+            
+        {% endwith %}
+        
+    {% empty %}
+    <div class='row'>
+        <div class='col-12 col-md-6 mx-auto my-5 py-5'>
+        <form method='GET' class='' action='.'>
+        
+            <div class="input-group form-group-no-border mx-auto" style="margin-bottom: 0px; font-size: 32px;">
+                <span class="input-group-addon cfe-nav" style='color:#000'>
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </span>
+                <input type="text" name="q" data-toggle="popover" data-placement="bottom" data-content="Press enter to search" class="form-control cfe-nav mt-0 py-3" placeholder="Search..." value="" style="" data-original-title="" title="" autofocus="autofocus">
+            </div>
+    
+        </form>
+    
+        </div>
+    </div>
+    {% endfor %}
+    {% endblock content %}

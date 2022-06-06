@@ -3,9 +3,11 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.template import loader
 from sympy import Q
-from . import models
-from .forms import Usd_Form, Usd_blue_Form, Euro_Form, Real_Form, busqueda_Form
-import datetime
+from Monedas.models import *
+from .forms import *
+from itertools import chain
+from django.views.generic import ListView
+
 
 # Create your views here.
 
@@ -33,24 +35,6 @@ def landing_cotizacion(request):
     template = loader.get_template("landing_cotizacion.html")
     documento = template.render()
     return HttpResponse(documento)
-
-def landing_busqueda(request):
-    usd = None
-    usd_blue = None
-    euro = None
-    real = None
-
-    if 'q' in request.GET:
-        q = request.GET['q']
-        usd = models.Dolar.objects.filter(fecha__icontains=q)
-        usd_blue = models.Dolar_blue.objects.filter(fecha__icontains=q)
-        euro = models.Euro.objects.filter(fecha__icontains=q)
-        real = models.Reais.objects.filter(fecha__icontains=q)
-    else:
-        q = (models.Dolar.objects.all, models.Dolar_blue.objects.all, models.Euro.objects.all, models.Reais.objects.all)
-    
-    
-    return render (request, 'landing_busqueda.html', {'usd': usd, 'usd_blue': usd_blue, 'euro': euro, 'real': real})
 
 def cotizacion_usd(request):
     if request.method == "POST":
@@ -92,3 +76,39 @@ def cotizacion_real(request):
     
     form = Real_Form
     return render(request, "cotizacion_real.html",  {'form': form})
+
+
+class SearchView(ListView):
+    template_name = 'landing_busqueda.html'
+    paginate_by = 20
+    count = 0
+    
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context['count'] = self.count or 0
+        context['query'] = self.request.GET.get('q')
+        return context
+
+    def get_queryset(self):
+        request = self.request
+        query = request.GET.get('q', None)
+       
+        if query is not None:
+            resultados_dolar        = Dolar.objects.filter(query)
+            resultados_euro      = Euro.objects.filter(query)
+            resultados_dolar_blue     = Dolar_blue.objects.filter(query)
+            resultados_real                = Reais.objects.filter(query)
+            
+            # combinar las búsquedas 
+            queryset_chain = chain(
+                    resultados_dolar,
+                    resultados_euro,
+                    resultados_dolar_blue,
+                    resultados_real,
+            )        
+            qs = sorted(queryset_chain, 
+                        key=lambda instance: instance.pk, 
+                        reverse=True)
+            self.count = len(qs) # el resultado es una lista
+            return qs
+        return Dolar.objects.none() # por Default debería ir una lista vacía

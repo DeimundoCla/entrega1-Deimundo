@@ -1,8 +1,26 @@
 from django.db import models
 from datetime import date
+from django.db.models import Q
 
-# Create your models here.
+class SetQuery(models.Manager):
+    def search(self, query=None):
+        qs = self.get_queryset()
+        if query is not None:
+            or_lookup = (Q(nombre__icontains=query) | 
+                         Q(fecha=query)|
+                         Q(cotizacion__icontains=query)
+                        )
+            
+            qs = qs.filter(or_lookup).distinct() 
+            # distinct() por lo que leí muchas veces es requisito para las búsquedas múltiples con Q.
 
+        return qs
+
+class ManagerQuery(models.Manager):
+    def get_queryset(self):
+        return SetQuery (self.model, using=self._db)
+    def search(self, query=None):
+        return self.get_queryset().search(query=query)
 
 class Euro(models.Model):
     nombre = models.CharField(max_length=50, default="Euro")
@@ -11,12 +29,16 @@ class Euro(models.Model):
     fecha = models.DateField(default=date.today)
     variacion = models.DecimalField(max_digits=3, decimal_places=0)
 
+    objects = ManagerQuery()
+
 class Dolar(models.Model):
     nombre = models.CharField(max_length=50, default="Dolar")
     simbolo = "U$S"
     cotizacion = models.FloatField()
     fecha = models.DateField(default=date.today)
     variacion = models.DecimalField(max_digits=3, decimal_places=0)
+    
+    objects = ManagerQuery()
 
 class Dolar_blue(models.Model):
     nombre = models.CharField(max_length=50, default="Dolar Blue")
@@ -25,6 +47,8 @@ class Dolar_blue(models.Model):
     fecha = models.DateField(default=date.today)
     variacion = models.DecimalField(max_digits=3, decimal_places=0)
 
+    objects = ManagerQuery()
+
 
 class Reais(models.Model):
     nombre = models.CharField(max_length=50, default="Real")
@@ -32,3 +56,5 @@ class Reais(models.Model):
     cotizacion = models.FloatField()
     fecha = models.DateField(default=date.today)
     variacion = models.DecimalField(max_digits=3, decimal_places=0)
+    
+    objects = ManagerQuery()
