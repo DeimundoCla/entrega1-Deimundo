@@ -1,3 +1,9 @@
+#Información para desafío
+En NavBar está el elemento "Cargador de cotizaciones".
+La búsqueda sólo devuelve USD, se hizo el intento de combinar los modelos, pero se hizo imposible. El intento está en rama: version06.
+
+
+
 # Maquetación:
 
 1) Home con botones para ingresar a las funciones principales de la página web: Conversor de divisas - Buscador de código Swift - Carga de cotizaciones por día y hora.
@@ -42,3 +48,8 @@
 1) Se intentó crear búsqueda compleja mediante varios modelos y varias query.
 2) Pese a entender el proceso del query, se encontraron problemas para vincular lo que se hace con la búsqueda en la URL.
 3) Se deja esta rama para continuar este formato de búsqueda en el futuro.
+
+# version 0.7 (Master)
+1) Se creó una búsqueda de cotizaciones por fecha, arreglando en la búsqueda la posibilidad de elegir fecha mediante formulario correspondiente.
+2) Se le sumó a las cargas de cotizaciones la posibilidad de agregar la fecha mediante formulario correspondiente.
+3) Se empieza a crear la 404 para manejar páginas no existentes, problemas al pasar de DEBUG=TRUE a FALSE.
