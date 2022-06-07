@@ -1,4 +1,4 @@
-#Información para desafío
+# Información para desafío
 En NavBar está el elemento "Cargador de cotizaciones".
 La búsqueda sólo devuelve USD, se hizo el intento de combinar los modelos, pero se hizo imposible. El intento está en rama: version06.
 
