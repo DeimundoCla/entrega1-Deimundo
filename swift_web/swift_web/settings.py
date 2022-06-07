@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-2xa2&ze$a_lz200m0#8@ha2si1!c%f85ap518_t%^r+xc99xd^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -117,8 +117,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = '/Monedas/static/'
-MEDIA_URL = '/images/'
+STATIC_URL = 'Monedas/static/'
+MEDIA_URL = 'images/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'Monedas/static'),)
 

@@ -11693,11 +11693,12 @@ body {
 .landing_page {
   position: relative;
   width: 100%;
-  height: fit-content;
+  height: 100vh;
   min-height: 35rem;
   padding: 15rem 0;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.4)), url("../assets/img/bg-landing.jpg");
-  background-position: center;
+  padding-top: 30rem 40rem;
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.2)), url("../assets/img/bg-landing.jpg");
+  background-position: bottom;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: contain;

@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from requests import request
 from Monedas import views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -30,5 +31,5 @@ urlpatterns = [
     path('cotizacion_usd_blue/', views.cotizacion_usd_blue, name="cotizacion_usd_blue"),
     path('cotizacion_euro/', views.cotizacion_euro, name="cotizacion_euro"),
     path('cotizacion_real/', views.cotizacion_real, name="cotizacion_real"),
-    path('landing_busqueda/', views.landing_busqueda, name="busqueda"),
+    path('landing_busqueda/', views.q_dolar, name="busqueda"),
     ]

@@ -13,7 +13,7 @@ class Usd_Form(ModelForm):
         widgets = {
             'nombre': forms.HiddenInput(attrs={'value': 'usd'}),
             'cotizacion': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Cotización de la moneda',}),
-            'fecha': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Fecha de la cotización', }),
+            'fecha': forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'Fecha de la cotización', 'type': 'date'}),
             'variacion': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Variación de la cotización',}),
         }
 
@@ -50,37 +50,4 @@ class Real_Form(ModelForm):
             'cotizacion': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Cotización de la moneda',}),
             'fecha': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Fecha de la cotización', }),
             'variacion': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Variación de la cotización',}),
-        }
-
-class busqueda_Form(ModelForm):
-    class Meta:
-        model = Dolar
-        fields = ['nombre', 'fecha']
-        
-        widgets = {
-            'fecha': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Fecha de la cotización', }),
-            'nombre': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre de la moneda',}),        }
-    class Meta:
-        model = Dolar_blue
-        fields = ['nombre', 'fecha']
-        
-        widgets = {
-            'fecha': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Fecha de la cotización', }),
-            'nombre': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre de la moneda',}), 
-        }
-    class Meta:
-        model = Euro
-        fields = ['nombre', 'fecha']
-        
-        widgets = {
-            'fecha': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Fecha de la cotización', }),
-            'nombre': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre de la moneda',}), 
-        }
-    class Meta:
-        model = Reais
-        fields = ['nombre', 'fecha']
-        
-        widgets = {
-            'fecha': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Fecha de la cotización', }),
-            'nombre': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre de la moneda',}), 
         }

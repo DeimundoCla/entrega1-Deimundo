@@ -1,11 +1,15 @@
+from logging import exception
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.template import loader
+from sklearn import exceptions
 from sympy import Q
-from . import models
-from .forms import Usd_Form, Usd_blue_Form, Euro_Form, Real_Form, busqueda_Form
-import datetime
+from Monedas.models import *
+from .forms import *
+from itertools import chain
+from django.views.generic import ListView
+
 
 # Create your views here.
 
@@ -33,24 +37,6 @@ def landing_cotizacion(request):
     template = loader.get_template("landing_cotizacion.html")
     documento = template.render()
     return HttpResponse(documento)
-
-def landing_busqueda(request):
-    usd = None
-    usd_blue = None
-    euro = None
-    real = None
-
-    if 'q' in request.GET:
-        q = request.GET['q']
-        usd = models.Dolar.objects.filter(fecha__icontains=q)
-        usd_blue = models.Dolar_blue.objects.filter(fecha__icontains=q)
-        euro = models.Euro.objects.filter(fecha__icontains=q)
-        real = models.Reais.objects.filter(fecha__icontains=q)
-    else:
-        q = (models.Dolar.objects.all, models.Dolar_blue.objects.all, models.Euro.objects.all, models.Reais.objects.all)
-    
-    
-    return render (request, 'landing_busqueda.html', {'usd': usd, 'usd_blue': usd_blue, 'euro': euro, 'real': real})
 
 def cotizacion_usd(request):
     if request.method == "POST":
@@ -92,3 +78,12 @@ def cotizacion_real(request):
     
     form = Real_Form
     return render(request, "cotizacion_real.html",  {'form': form})
+
+def q_dolar(request):
+    if request.method == "GET":
+        q = request.GET['q']
+        cot_dolar = Dolar.objects.filter(fecha__icontains=q)
+        return render (request, "landing_busqueda.html", {'cot_dolar': cot_dolar})
+
+
+    

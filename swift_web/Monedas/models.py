@@ -1,8 +1,6 @@
 from django.db import models
 from datetime import date
 
-# Create your models here.
-
 
 class Euro(models.Model):
     nombre = models.CharField(max_length=50, default="Euro")
@@ -11,12 +9,14 @@ class Euro(models.Model):
     fecha = models.DateField(default=date.today)
     variacion = models.DecimalField(max_digits=3, decimal_places=0)
 
+
 class Dolar(models.Model):
     nombre = models.CharField(max_length=50, default="Dolar")
     simbolo = "U$S"
     cotizacion = models.FloatField()
     fecha = models.DateField(default=date.today)
     variacion = models.DecimalField(max_digits=3, decimal_places=0)
+    
 
 class Dolar_blue(models.Model):
     nombre = models.CharField(max_length=50, default="Dolar Blue")
@@ -32,3 +32,5 @@ class Reais(models.Model):
     cotizacion = models.FloatField()
     fecha = models.DateField(default=date.today)
     variacion = models.DecimalField(max_digits=3, decimal_places=0)
+    
+

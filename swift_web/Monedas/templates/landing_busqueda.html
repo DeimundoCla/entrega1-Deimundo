@@ -1,30 +1,55 @@
 {% extends 'padre.html' %}
 {% load static %}
-
 {% block contenido %}
 
-<br>
+
 <section class="projects-section d-flex bg-light" id="projects">
     <div class="container px-4 px-lg-5">
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">Moneda</th>
-                <th scope="col">Fecha</th>
-                <th scope="col">Cotización</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for data in usd %}
-            <tr>
-                <td>{{ data.nombre }}</td>
-                <td>{{ data.fecha }}</td>
-                <td>{{ data.cotizacion }}</td>
-            </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+        <div class='row title-row my-5'>
+            <div class='col-12 py-0'>
+                <h3 class='my-0 py-0'> Estas son las cotizaciones de la fecha:</b></h3>
+                <br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <b>Dolar Oficial</b>
+                        </div>
+                        <div class="col order-5 text-center">
+                            <b>Fecha de la cotizacion</b>
+                        </div>
+                            <div class="col order-1 text-center">
+                            <b>Cotización</b>
+                        </div>
+                        <div class="col order-1 text-center">
+                            <b>Variación diaria</b>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        {% if cot_dolar%}
+                            {% for i in cot_dolar %}
+                                <div class="col">
+                                    {{ q }} 
+                                </div>
+                                <div class="col order-5 text-center">
+                                    {{ i.fecha}}
+                                </div>
+                                <div class="col order-1 text-center">
+                                    {{ i.cotizacion}}
+                                </div>
+                                <div class="col order-1 text-center">
+                                    {{ i.variacion}}                            
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            </a><br/>No hay cotizaciones para esa fecha.</h5>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
+
 
 {% endblock %}
