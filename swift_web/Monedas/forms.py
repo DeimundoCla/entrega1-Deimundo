@@ -1,7 +1,5 @@
 from django import forms
 from django.forms import ModelForm
-from matplotlib import widgets
-from sympy import true
 from .models import Dolar, Dolar_blue, Euro, Reais
 
 #Formulario cotizaciones

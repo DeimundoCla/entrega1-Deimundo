@@ -1,15 +1,9 @@
-from logging import exception
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.template import loader
-from sklearn import exceptions
-from sympy import Q
 from Monedas.models import *
 from .forms import *
-from itertools import chain
-from django.views.generic import ListView
-
 
 # Create your views here.
 
