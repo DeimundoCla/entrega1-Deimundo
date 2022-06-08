@@ -1,5 +1,6 @@
 # Información para desafío
-En NavBar está el elemento "Cargador de cotizaciones".
+En NavBar está el elemento "Cargador de cotizaciones", página en la que se encuentran todos los requisitos del entregable.
+<p>
 La búsqueda sólo devuelve USD, se hizo el intento de combinar los modelos, pero se hizo imposible. El intento está en rama: version06.
 
 
